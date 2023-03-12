@@ -3,7 +3,7 @@ import { Map } from "immutable";
 import { setLoader, setData } from '../actions';
 
 const initialState = new Map({
-  loader: true,
+  loader: false,
   data: [],
   renderData: []
 })

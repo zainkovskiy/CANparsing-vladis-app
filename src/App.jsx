@@ -1,18 +1,15 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadData } from './actions';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Linear } from 'components/Linear';
+import { Filter } from 'components/Filter';
 import { TableComponent } from 'components/TableComponent';
 import './_base.scss';
 
 export const App = () => {
-  const dispatch = useDispatch();
   const loader = useSelector((state) => state.get('loader')); 
-  useEffect(() => {
-    dispatch(loadData());
-  }, [])
   return (
     <>
+    <Filter/>
       {
         loader ? <Linear/> : <TableComponent/>
       }
